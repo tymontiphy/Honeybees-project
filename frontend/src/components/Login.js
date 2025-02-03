@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { loginUser } from '../api';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { Link } from 'react-router-dom'; // Import Link for navigation
 
 const Login = () => {
     const [formData, setFormData] = useState({ email: '', password: '' });
@@ -48,6 +49,9 @@ const Login = () => {
                 {error && <p>{error}</p>}
                 <button type="submit">Login</button>
             </form>
+            <div>
+                <p>Don't have an account? <Link to="/register">Register here</Link></p>
+            </div>
         </div>
     );
 };
